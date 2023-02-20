@@ -1,5 +1,5 @@
 import { createTransport } from 'nodemailer'
-import { config, from, recipient, attachments, templatePath } from './config.js'
+import { config, from, recipient, attachments, templatePath, numOfMessage } from './config.js'
 import { readFileSync } from 'fs'
 
 function loadTemplate() {
@@ -18,14 +18,17 @@ async function sendMail() {
             ciphers: 'SSLv3'
         }
     });
-    const info = await transporter.sendMail({
-        from: from,
-        to: recipient,
-        subject: `Dark Mode Email Test ${Math.random().toString().substring(2, 8)}`,
-        html: loadTemplate(),
-        attachments: attachments
-    });
-    console.log(`Message sent: ${info.messageId}`);
+    for (let i = 0; i < numOfMessage; i++) {
+        const info = await transporter.sendMail({
+            from: from,
+            to: recipient,
+            subject: `${i}th ${Math.random().toString().substring(2, 8)}`,
+            html: loadTemplate(),
+            attachments: attachments
+        });
+        console.log(`${i} Message sent: ${info.messageId}`);
+    }
+    
 }
 
 sendMail()

@@ -3,14 +3,14 @@ const config = {
     port: 465,
     secure: true,
     auth: {
-        user: 'user name',
-        pass: 'password, if the host is google, the password is app password',
+        user: 'YOUR ACCOUNT',
+        pass: 'YOUR MAIL TOKEN',
     }
 }
-const templatePath = "darkModeMailTemplate.html"
-const from = 'name<address@mail.com>'
-const recipient = 'name<address@mail.com>'
-// Return empty array if no attachment
+const templatePath = "test.html"
+const from = 'NAME <ADDRESS@MAIL.com>'
+const recipient = 'NAME <ADDRESS@MAIL.com>'
+const numOfMessage = 1
 const attachments = [{
     filename: 'moon.png',
     path: 'moon.png',
@@ -21,4 +21,4 @@ const attachments = [{
     path: 'sun.png',
     cid: 'sun'
 }]
-export { config, from, recipient, attachments, templatePath }
+export { config, from, recipient, attachments, templatePath, numOfMessage }
