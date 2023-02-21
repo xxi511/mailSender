@@ -1,0 +1,5 @@
+account = 'ACCOUNT@gmail.com'
+applicationPassword = 'PASSWORD'
+receiver = 'RECEIVER@test.com'
+numOfMessages = 1
+templateName = 'test.html'
