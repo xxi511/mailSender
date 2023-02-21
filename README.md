@@ -1,18 +1,13 @@
 # mailSender
 
 ## How to use
-1. `config.js`   
-rename `config.js.back` to `config.js`    
+1. `config.py`   
+rename `config.py.bak` to `config.py`    
 update the configuration   
 
-2. dependencies
+2. execute   
 ```
-$ npm install
-```
-
-3. execute   
-```
-$ npm start
+$ python3 main.py
 ```
 
 Inspired by https://github.com/tomayac/dark-mode-email
